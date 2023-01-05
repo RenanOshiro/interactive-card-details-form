@@ -4,6 +4,128 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  label {
+    @apply text-vdViolet uppercase mb-2 text-xs;
+    letter-spacing: 2px;
+  }
+  input {
+    @apply border-solid border-[1px] border-lgViolet rounded-lg py-2 px-4 mb-5 w-full outline-0;
+  }
+  input::placeholder {
+    @apply text-lgViolet;
+  }
+
+  footer {
+    @apply mt-10;
+  }
+}
+
 .body-base {
-  @apply font-spaceGrotesk text-[18px];
+  @apply font-spaceGrotesk text-[18px] bg-dgViolet flex flex-col justify-center items-center min-h-screen w-screen;
+}
+
+.card-container {
+  @apply min-h-[600px] w-[375px] bg-white xl:w-[1100px] xl:flex;
+}
+.cards {
+  @apply block h-[230px] w-full relative bg-[url('images/bg-main-mobile.png')] xl:h-[600px] xl:w-[350px] xl:bg-[url('images/bg-main-desktop.png')];
+}
+.card-front {
+  @apply w-[300px] h-[160px] absolute z-10 rounded-md text-white p-5 bottom-[-51px] left-[15px] xl:top-[130px] xl:left-[125px];
+  background-image: url('images/bg-card-front.png');
+  background-position: center;
+  background-size: cover;
+}
+.card-logo {
+  @apply h-[50%];
+}
+.card-logo-img {
+  @apply w-[50px] h-auto;
+}
+.card-info {
+  @apply flex flex-wrap justify-between h-[50%];
+}
+.card-num {
+  @apply w-full text-xl mb-4;
+  letter-spacing: 2px;
+}
+.cardholder {
+  @apply w-[80%] text-xs uppercase;
+  letter-spacing: 1px;
+}
+.expire {
+  @apply w-[50px] text-xs text-right;
+  letter-spacing: 1px;
+}
+.card-back {
+  @apply w-[300px] h-[160px] absolute rounded-md text-white top-[30px] right-[15px] flex items-center justify-end pr-10 xl:top-[310px] xl:right-[-145px];
+  background-image: url('images/bg-card-back.png');
+  background-position: center;
+  background-size: cover;
+}
+.card-cvc {
+  @apply text-xs;
+  letter-spacing: 1px;
+}
+
+.form-area {
+  @apply flex items-center xl:w-[750px];
+}
+.form-container {
+  @apply flex flex-wrap w-full px-6 pb-6 mt-24 xl:w-[60%] xl:mr-[80px] xl:ml-auto xl:mt-0 xl:pb-0;
+}
+.exp-date {
+  @apply w-[50%] flex flex-wrap;
+}
+.input-date {
+  @apply w-[22%] mr-2 py-2 px-4 text-[18px];
+}
+.cvc {
+  @apply w-[50%];
+}
+.input-cvc {
+  @apply w-[50%] ml-[3px] py-2 text-[18px] xl:ml-2;
+}
+.submit {
+  @apply py-3 mt-2 text-white bg-vdViolet border-0 cursor-pointer;
+}
+.active {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.thankyou-area {
+  @apply hidden flex-col items-center justify-center w-full px-6 pb-6 mt-24 xl:w-[60%] xl:mr-[80px] xl:ml-auto xl:mt-0;
+}
+.complete-icon {
+  @apply mb-8;
+}
+.ty-text {
+  @apply text-3xl text-vdViolet uppercase mb-3;
+  letter-spacing: 2px;
+}
+.msg {
+  @apply text-dgViolet mb-8;
+}
+.btn-reset {
+  @apply py-3 mt-2 text-white bg-vdViolet w-full rounded-lg mb-10 xl:mb-0;
+}
+
+.error {
+  @apply border-errorRed;
+  border-width: 2px;
+}
+.error-msg,
+.error-msg-card,
+.error-msg-date,
+.error-msg-cvc {
+  @apply hidden w-full text-xs text-errorRed normal-case mt-[-15px] mb-5;
+  letter-spacing: 0;
+}
+.half {
+  @apply w-1/2;
 }

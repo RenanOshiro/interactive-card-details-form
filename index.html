@@ -23,26 +23,120 @@
         text-align: center;
       }
       .attribution a {
-        color: hsl(228, 45%, 44%);
+        color: hsl(228, 95%, 84%);
       }
     </style>
   </head>
   <body class="body-base">
-    0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
-    Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC
-    e.g. 123 Confirm
+    <main>
+      <div class="card-container">
+        <div class="cards">
+          <div class="card-front">
+            <div class="card-logo">
+              <img
+                class="card-logo-img"
+                src="images/card-logo.svg"
+                alt="Card logo"
+              />
+            </div>
+            <div class="card-info">
+              <p class="card-num">0000 0000 0000 0000</p>
+              <div class="cardholder"><p>Jane Appleseed</p></div>
+              <p class="expire">00/00</p>
+            </div>
+          </div>
+          <div class="card-back">
+            <p class="card-cvc">000</p>
+          </div>
+        </div>
+        <div class="form-area">
+          <form class="form-container" action="#">
+            <label for="name">Cardholder Name</label>
+            <input
+              id="name"
+              type="text"
+              maxlength="25"
+              placeholder="e.g. Jane Appleseed"
+            />
+            <p class="error-msg">Invalid name</p>
+            <label for="card-number">Card Number</label>
+            <input
+              id="card-number"
+              type="text"
+              maxlength="19"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <p class="error-msg-card">Invalid number</p>
+            <label class="exp-date" for="exp-date-mm">Exp. Date (MM/YY) </label>
+            <label class="cvc" for="cvc">CVC </label>
+            <input
+              class="input-date"
+              id="exp-date-mm"
+              type="text"
+              placeholder="MM"
+              maxlength="2"
+            />
+            <input
+              class="input-date"
+              id="yy"
+              type="text"
+              placeholder="YY"
+              maxlength="2"
+            />
+            <input
+              class="input-cvc"
+              id="cvc"
+              type="text"
+              placeholder="e.g. 123"
+              maxlength="3"
+            />
+            <div class="half">
+              <p class="error-msg-date">Invalid date</p>
+            </div>
+            <div class="half">
+              <p class="error-msg-cvc">Invalid cvc</p>
+            </div>
+            <input class="submit" type="submit" value="Confirm" />
+          </form>
+          <!-- Completed state start -->
+          <div class="thankyou-area">
+            <img class="complete-icon" src="images/icon-complete.svg" alt="" />
+            <h3 class="ty-text">Thank you!</h3>
+            <p class="msg">We've added your card details</p>
+            <button class="btn-reset">Continue</button>
+          </div>
+        </div>
+      </div>
+    </main>
 
-    <!-- Completed state start -->
-
-    Thank you! We've added your card details Continue
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="https://github.com/RenanOshiro">Renan Oshiro</a>.
-    </div>
-
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/RenanOshiro">Renan Oshiro</a>.
+      </div>
+    </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <script>
+      new Cleave('#card-number', {
+        blocks: [4, 4, 4, 4],
+        numericOnly: true,
+      });
+      new Cleave('#exp-date-mm', {
+        blocks: [2],
+        numericOnly: true,
+      });
+      new Cleave('#yy', {
+        blocks: [2],
+        numericOnly: true,
+      });
+
+      new Cleave('#cvc', {
+        blocks: [3],
+        numericOnly: true,
+      });
+    </script>
   </body>
 </html>

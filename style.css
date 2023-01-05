@@ -421,6 +421,45 @@ video {
   display: none;
 }
 
+label{
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: hsl(278 68% 11% / var(--tw-text-opacity));
+  letter-spacing: 2px;
+}
+
+input{
+  margin-bottom: 1.25rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: hsl(270 3% 87% / var(--tw-border-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  outline-width: 0px;
+}
+
+input::-moz-placeholder{
+  --tw-text-opacity: 1;
+  color: hsl(270 3% 87% / var(--tw-text-opacity));
+}
+
+input::placeholder{
+  --tw-text-opacity: 1;
+  color: hsl(270 3% 87% / var(--tw-text-opacity));
+}
+
+footer{
+  margin-top: 2.5rem;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -516,6 +555,315 @@ video {
 }
 
 .body-base{
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: hsl(279 6% 55% / var(--tw-bg-opacity));
   font-family: Space Grotesk;
   font-size: 18px;
+}
+
+.card-container{
+  min-height: 600px;
+  width: 375px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 1440px){
+  .card-container{
+    display: flex;
+    width: 1100px;
+  }
+}
+
+.cards{
+  position: relative;
+  display: block;
+  height: 230px;
+  width: 100%;
+  background-image: url('images/bg-main-mobile.png');
+}
+
+@media (min-width: 1440px){
+  .cards{
+    height: 600px;
+    width: 350px;
+    background-image: url('images/bg-main-desktop.png');
+  }
+}
+
+.card-front{
+  position: absolute;
+  bottom: -51px;
+  left: 15px;
+  z-index: 10;
+  height: 160px;
+  width: 300px;
+  border-radius: 0.375rem;
+  padding: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1440px){
+  .card-front{
+    top: 130px;
+    left: 125px;
+  }
+}
+
+.card-front {
+  background-image: url('images/bg-card-front.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.card-logo{
+  height: 50%;
+}
+
+.card-logo-img{
+  height: auto;
+  width: 50px;
+}
+
+.card-info{
+  display: flex;
+  height: 50%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-num{
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: 2px;
+}
+
+.cardholder{
+  width: 80%;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.expire{
+  width: 50px;
+  text-align: right;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 1px;
+}
+
+.card-back{
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  display: flex;
+  height: 160px;
+  width: 300px;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 0.375rem;
+  padding-right: 2.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1440px){
+  .card-back{
+    top: 310px;
+    right: -145px;
+  }
+}
+
+.card-back {
+  background-image: url('images/bg-card-back.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.card-cvc{
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 1px;
+}
+
+.form-area{
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 1440px){
+  .form-area{
+    width: 750px;
+  }
+}
+
+.form-container{
+  margin-top: 6rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 1440px){
+  .form-container{
+    margin-right: 80px;
+    margin-left: auto;
+    margin-top: 0px;
+    width: 60%;
+    padding-bottom: 0px;
+  }
+}
+
+.exp-date{
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+}
+
+.input-date{
+  margin-right: 0.5rem;
+  width: 22%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 18px;
+}
+
+.cvc{
+  width: 50%;
+}
+
+.input-cvc{
+  margin-left: 3px;
+  width: 50%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 18px;
+}
+
+@media (min-width: 1440px){
+  .input-cvc{
+    margin-left: 0.5rem;
+  }
+}
+
+.submit{
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-width: 0px;
+  --tw-bg-opacity: 1;
+  background-color: hsl(278 68% 11% / var(--tw-bg-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.active {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.thankyou-area{
+  margin-top: 6rem;
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 1440px){
+  .thankyou-area{
+    margin-right: 80px;
+    margin-left: auto;
+    margin-top: 0px;
+    width: 60%;
+  }
+}
+
+.complete-icon{
+  margin-bottom: 2rem;
+}
+
+.ty-text{
+  margin-bottom: 0.75rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: hsl(278 68% 11% / var(--tw-text-opacity));
+  letter-spacing: 2px;
+}
+
+.msg{
+  margin-bottom: 2rem;
+  --tw-text-opacity: 1;
+  color: hsl(279 6% 55% / var(--tw-text-opacity));
+}
+
+.btn-reset{
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: hsl(278 68% 11% / var(--tw-bg-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1440px){
+  .btn-reset{
+    margin-bottom: 0px;
+  }
+}
+
+.error{
+  --tw-border-opacity: 1;
+  border-color: hsl(0 100% 66% / var(--tw-border-opacity));
+  border-width: 2px;
+}
+
+.error-msg,
+.error-msg-card,
+.error-msg-date,
+.error-msg-cvc{
+  margin-top: -15px;
+  margin-bottom: 1.25rem;
+  display: none;
+  width: 100%;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: none;
+  --tw-text-opacity: 1;
+  color: hsl(0 100% 66% / var(--tw-text-opacity));
+  letter-spacing: 0;
+}
+
+.half{
+  width: 50%;
 }
